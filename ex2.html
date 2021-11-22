@@ -11,6 +11,7 @@
 <body>
 
 <script>
+    //F12 console 창에 S.Event{originalEvent:PointerEvent.....}
     $(document).ready(function() {
 
         const result = $('#result')
@@ -19,8 +20,8 @@
         //jquery는 이벤트 처리
 
         // 1. 동적인 요소에도 이벤트를 걸수 있다.
-        // 2. e 는 순수한 이벤트 객체가 아니라 쌓여있다. -> originalEvent
-        // 3. e.target으로 꺼낸 객체는 DOM객체 (jquery객체 아님)
+        // 2. e 는 순수한 이벤트 객체가 아니라 쌓여있다. -> 순수한 이벤트를 쓰려면 originalEvent 사용
+        // 3. e.target 으로 꺼낸 객체는 DOM 객체이다. (jquery객체 아님)
 
         $("#btn").on("click", (e)=> {
             console.log(e)
@@ -43,9 +44,11 @@
 
 <button id="testBtn">Test</button>
 <script>
+    //F12 console 창에 pointerEvent {....}
     document.querySelector("#testBtn").addEventListener("click", function(e){
         console.log(e)
     }, false)
 </script>
+
 </body>
 </html>

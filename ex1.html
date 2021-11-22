@@ -21,26 +21,41 @@
 <a href="mp3/aaa.mp3">AAAAAAAA</a>
 <a href="mp3/aaa.mp3">AAAAAAAA</a>
 <a href="mp3/aaa.mp3">AAAAAAAA</a>
-<a href="mp3/aaa.mp3">AAAAAAAA</a>
 
 
 <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
+<!-- JQuery 가 실행되었는지 확인법 ; console.log($)  => F12 console창 f(,) 함수가 나옴.-- JQuery 의 위치가 중요하다.-->
+
+<!-- 이벤트 넣기_
+<script>
+    $("h1").on("click", (e)=> {
+        alert("1111")
+    })
+</script>
+-->
 <script>
 
+    //   const aaa = document.querySelector("h1") ,  const bbb =  $("h1") 는 같아 보이지만 다르다.
+
     const aaa = document.querySelector("h1")
-    //aaa.innerHTML ="BBBB"
+    //aaa.innerHTML ="BBB" 로 바꾸면 화면에 "BBB" 로 나옴.
 
     const bbb =  $("h1")
-    //bbb.get(0).innerHTML ="BBB"
+    //bbb.innerHTML ="BBB" 로 바꾸면 화면에 "AAA" 로 나옴.
 
-    //bbb[0].innerHTML ="BBB"
-    bbb.html("BBB")
+    //bbb.get(0).innerHTML ="BBB"   //; 화면에 "BBB" 로 나옴
+    //bbb[0].innerHTML ="BBB"       //; 화면에 "BBB" 로 나옴
 
-    console.log(bbb.html())
 
+    bbb.html("BBB")     //;화면에 "BBB" 로 나옴
+
+    console.log(bbb.html())    //innerHTML 을 얻어와야할때,파라미터가 없으면 게터=> innerHTML 을 가져옴. 파라미터가 있으면 세터
+
+
+    //("a")태그 (mp3/aaa.mpe)를 mp3/ccc.mp3로 바꿔주기.
     $("a").attr("href", "mp3/ccc.mp3").addClass("red").hide('slow')
 
 
